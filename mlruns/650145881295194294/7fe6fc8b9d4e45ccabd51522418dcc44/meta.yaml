@@ -1,0 +1,15 @@
+artifact_uri: file:///home/utilisateur/Documents/dev/devia/API_ML/models/mlruns/650145881295194294/7fe6fc8b9d4e45ccabd51522418dcc44/artifacts
+end_time: 1727550741143
+entry_point_name: ''
+experiment_id: '650145881295194294'
+lifecycle_stage: active
+run_id: 7fe6fc8b9d4e45ccabd51522418dcc44
+run_name: NaiveBayes
+run_uuid: 7fe6fc8b9d4e45ccabd51522418dcc44
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727550738675
+status: 3
+tags: []
+user_id: utilisateur

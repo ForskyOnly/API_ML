@@ -1,0 +1,15 @@
+artifact_uri: file:///home/utilisateur/Documents/dev/devia/API_ML/models/mlruns/650145881295194294/f8aaa8a2c4fa4ad7b24847bfb979235d/artifacts
+end_time: 1727550738673
+entry_point_name: ''
+experiment_id: '650145881295194294'
+lifecycle_stage: active
+run_id: f8aaa8a2c4fa4ad7b24847bfb979235d
+run_name: GradientBoosting
+run_uuid: f8aaa8a2c4fa4ad7b24847bfb979235d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727550727281
+status: 3
+tags: []
+user_id: utilisateur

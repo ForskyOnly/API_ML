@@ -1,0 +1,15 @@
+artifact_uri: file:///home/utilisateur/Documents/dev/devia/API_ML/models/mlruns/650145881295194294/2ba571b7ec254d759fef51c44bf9a0e3/artifacts
+end_time: 1727550673545
+entry_point_name: ''
+experiment_id: '650145881295194294'
+lifecycle_stage: active
+run_id: 2ba571b7ec254d759fef51c44bf9a0e3
+run_name: SVM
+run_uuid: 2ba571b7ec254d759fef51c44bf9a0e3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727550669433
+status: 4
+tags: []
+user_id: utilisateur

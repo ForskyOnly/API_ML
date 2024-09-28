@@ -1,0 +1,6 @@
+artifact_location: file:///home/utilisateur/Documents/dev/devia/API_ML/models/mlruns/650145881295194294
+creation_time: 1727550669360
+experiment_id: '650145881295194294'
+last_update_time: 1727550669360
+lifecycle_stage: active
+name: Classification de texte

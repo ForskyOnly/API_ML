@@ -1,0 +1,37 @@
+{
+  "DCM1": {
+    "DCM1": 2,
+    "DCO3": 0,
+    "DCP2": 0,
+    "DCP3": 1,
+    "NONDCP": 0
+  },
+  "DCO3": {
+    "DCM1": 0,
+    "DCO3": 3,
+    "DCP2": 3,
+    "DCP3": 0,
+    "NONDCP": 0
+  },
+  "DCP2": {
+    "DCM1": 0,
+    "DCO3": 0,
+    "DCP2": 2,
+    "DCP3": 0,
+    "NONDCP": 0
+  },
+  "DCP3": {
+    "DCM1": 1,
+    "DCO3": 0,
+    "DCP2": 0,
+    "DCP3": 3,
+    "NONDCP": 0
+  },
+  "NONDCP": {
+    "DCM1": 0,
+    "DCO3": 0,
+    "DCP2": 0,
+    "DCP3": 0,
+    "NONDCP": 5
+  }
+}
