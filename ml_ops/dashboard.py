@@ -5,40 +5,59 @@ import plotly.express as px
 import plotly.graph_objects as go
 from mlflow.tracking import MlflowClient
 
+####################   Ce script crée un tableau de bord Streamlit pour visualiser et analyser les performances  #####################
+####################   des modèles de classification entraînés avec MLflow.  ################################################
+
+
+
 # Configuration de MLflow
 mlflow.set_tracking_uri("file:./mlruns")
 client = MlflowClient()
 
-# Fonction pour charger les données MLflow
 def load_mlflow_data():
+    """
+    Charge les données des expériences MLflow pour la classification de texte.
+    
+    Returns:
+        DataFrame: Un DataFrame contenant les informations sur les runs MLflow.
+    """
     experiment = mlflow.get_experiment_by_name("Classification de texte")
     runs = mlflow.search_runs(experiment_ids=[experiment.experiment_id])
     return runs
 
-# Fonction pour calculer le drift
 def calculate_drift(train_metric, test_metric):
+    """
+    Calcule le drift entre les métriques d'entraînement et de test.
+    
+    Args:
+        train_metric (float): Valeur de la métrique pour l'ensemble d'entraînement.
+        test_metric (float): Valeur de la métrique pour l'ensemble de test.
+    
+    Returns:
+        float: Le pourcentage de drift calculé.
+    """
     return abs(train_metric - test_metric) / train_metric * 100
 
 # Titre du dashboard
 st.title("Dashboard des Modèles de Classification de Texte")
 
-# Chargez les données
+# Chargement des données
 runs = load_mlflow_data()
 
 # Sélection du modèle
 models = runs["params.model"].unique()
 selected_model = st.selectbox("Sélectionnez un modèle", models)
 
-# Filtrer les runs pour le modèle sélectionné
+# Filtrage des runs pour le modèle sélectionné
 model_runs = runs[runs["params.model"] == selected_model]
 
-# Afficher les meilleurs paramètres
+# Affichage des meilleurs paramètres
 st.subheader(f"Meilleurs paramètres pour {selected_model}")
 best_run = model_runs.loc[model_runs["metrics.test_accuracy"].idxmax()]
 best_params = {k: v for k, v in best_run.items() if k.startswith("params.") and k != "params.model"}
 st.json(best_params)
 
-# Afficher les métriques du meilleur run
+# Affichage des métriques du meilleur run
 st.subheader("Métriques du meilleur run")
 metrics = ["accuracy", "precision", "recall", "f1"]
 col1, col2 = st.columns(2)
