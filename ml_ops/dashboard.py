@@ -5,9 +5,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 from mlflow.tracking import MlflowClient
 
-####################   Ce script crée un tableau de bord Streamlit pour visualiser et analyser les performances  #####################
-####################   des modèles de classification entraînés avec MLflow.  ################################################
-
+####################  Ce script crée un tableau de bord Streamlit pour visualiser et analyser les performances, les modèles de classification entraînés avec MLflow.  ###############
+### streamlit run chemin/vers/ce_script.py
 
 
 # Configuration de MLflow
