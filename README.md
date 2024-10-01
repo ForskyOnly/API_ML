@@ -16,14 +16,14 @@ Ce projet est une API de classification des données à risque, utilisant des mo
 
 - Python 3.9+
 - Docker
-- Compte Azure (pour le déploiement)
+
 
 ## 🚀 Installation
 
 1. Clonez le dépôt :
    ```
-   git clone https://github.com/votre-username/votre-repo.git
-   cd votre-repo
+   git clone https://github.com/ForskyOnly/API_ML/.git
+   cd api_ml
    ```
 
 2. Créez un environnement virtuel :
