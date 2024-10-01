@@ -1,5 +1,18 @@
+Voici une version mise à jour et intégrée du README, incorporant les informations sur le ML Ops et le dashboard :
+
+```markdown
 # 🚀 API de Classification des Données à Risque
 
+## 📋 Table des matières
+- [À propos du projet](#à-propos-du-projet)
+- [Fonctionnalités](#fonctionnalités)
+- [Prérequis](#prérequis)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+- [ML Ops et Dashboard](#ml-ops-et-dashboard)
+- [Déploiement](#déploiement)
+- [Contribution](#contribution)
+- [Licence](#licence)
 
 ## 🎯 À propos du projet
 
@@ -11,12 +24,13 @@ Ce projet est une API de classification des données à risque, utilisant des mo
 - 🔐 Authentification par clé API
 - 📊 Utilisation de modèles MLflow pour les prédictions
 - 🐳 Conteneurisation avec Docker pour un déploiement facile
+- 📈 Dashboard interactif pour le suivi des performances des modèles
 
 ## 🛠 Prérequis
 
 - Python 3.9+
 - Docker
-
+- Compte Azure (pour le déploiement)
 
 ## 🚀 Installation
 
@@ -53,6 +67,47 @@ uvicorn api.app.main:app --reload
 
 L'API sera accessible à l'adresse `http://localhost:8000`.
 
+## 🛠 ML Ops et Dashboard
+
+### MLflow
+
+MLflow est utilisé pour le suivi des expériences, la gestion des modèles et le déploiement.
+
+Pour accéder à l'interface MLflow, exécutez :
+
+```
+mlflow ui
+```
+
+### Dashboard de Monitoring
+
+Un dashboard interactif a été développé avec Streamlit pour visualiser les performances des modèles.
+
+Pour lancer le dashboard :
+
+```
+streamlit run ml_ops/dashboard.py
+```
+
+#### Fonctionnalités principales du dashboard :
+
+1. Sélection du modèle
+2. Affichage des meilleurs paramètres
+3. Visualisation des métriques (précision, rappel, score F1)
+4. Analyse du drift
+5. Matrice de confusion
+6. Comparaison des modèles
+7. Historique des runs
+
+### Intégration Continue / Déploiement Continu (CI/CD)
+
+Nous utilisons GitHub Actions pour automatiser les tests, la construction des images Docker et le déploiement sur Azure.
+
+### Monitoring en Production
+
+- Logs : Utilisation du logging Python standard, capturé et géré par Azure.
+- Alertes : Configurées dans Azure pour notifier en cas de problèmes.
+
 ## 🌐 Déploiement
 
 1. Construisez l'image Docker :
@@ -80,3 +135,5 @@ Les contributions sont les bienvenues ! Consultez le fichier `CONTRIBUTING.md` p
 ## 📄 Licence
 
 Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+```
+
