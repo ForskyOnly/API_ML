@@ -14,16 +14,22 @@ def get_model():
     if run_id is None:
         raise ValueError("BEST_RUN_ID n'est pas défini dans le fichier .env")
     
-    try:
-        model_path = f"/api_ml/models/mlruns/650145881295194294/{run_id}/artifacts/model"
-        print(f"Tentative de chargement du modèle depuis : {model_path}")
-        model = mlflow.pyfunc.load_model(model_path)
-        print("Modèle chargé avec succès")
-        return model
-    except Exception as e:
-        print(f"Erreur lors du chargement du modèle : {str(e)}")
-        raise
+    # Chemin pour le déploiement Docker
+    docker_path = f"/api_ml/models/mlruns/650145881295194294/{run_id}/artifacts/model"
+    # Chemin pour l'exécution locale
+    local_path = f"./models/mlruns/650145881295194294/{run_id}/artifacts/model"
     
+    for path in [docker_path, local_path]:
+        try:
+            print(f"Tentative de chargement du modèle depuis : {path}")
+            model = mlflow.pyfunc.load_model(path)
+            print("Modèle chargé avec succès")
+            return model
+        except Exception as e:
+            print(f"Erreur lors du chargement du modèle depuis {path}: {str(e)}")
+    
+    raise ValueError("Impossible de charger le modèle à partir des chemins disponibles")
+
 model = None
 
 def get_model_instance():
