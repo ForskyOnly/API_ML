@@ -53,7 +53,10 @@ Ce projet est une API de classification des données à risque, utilisant des mo
 
 4. Configurez les variables d'environnement :
    ```
-   cp .env.example .env
+   MLFLOW_TRACKING_URI= chemin vers le dossier mlruns
+   BEST_RUN_ID= meilleir run id
+   API_KEY= la clef api
+   API_KEY_NAME=nom de l'api_key
    ```
    Éditez le fichier `.env` avec vos propres valeurs.
 
