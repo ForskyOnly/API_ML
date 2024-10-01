@@ -1,6 +1,6 @@
 Voici une version mise à jour et intégrée du README, incorporant les informations sur le ML Ops et le dashboard :
 
-```markdown
+
 # 🚀 API de Classification des Données à Risque
 
 ## 📋 Table des matières
@@ -135,5 +135,5 @@ Les contributions sont les bienvenues ! Consultez le fichier `CONTRIBUTING.md` p
 ## 📄 Licence
 
 Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
-```
+
 
