@@ -18,6 +18,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest
+    - name: Create .env file
+      run: |
+        echo "MLFLOW_TRACKING_URI=file:///api_ml/models/mlruns" >> .env
+        echo "BEST_RUN_ID=236cf92d6a2e499b9a1d9935a18cbef7" >> .env
+        echo "API_KEY=${{ secrets.API_KEY }}" >> .env
+        echo "API_KEY_NAME=access_token" >> .env
     - name: Run tests
       run: |
         pytest api/tests/ 

@@ -4,9 +4,9 @@ import os
 from dotenv import load_dotenv
 
 # Chargement des variables d'environnement
-load_dotenv()
+load_dotenv(override=True)
 API_KEY = os.getenv("API_KEY")
-
+API_KEY_NAME = os.getenv("API_KEY_NAME", "access_token")
 
 client = TestClient(app)
 

@@ -13,7 +13,7 @@ load_dotenv()
 
 # Récupération des variables d'environnement pour l'API key
 API_KEY = os.getenv("API_KEY")
-API_KEY_NAME = os.getenv("API_KEY_NAME")
+API_KEY_NAME = os.getenv("API_KEY_NAME", "access_token")
 
 # Configuration de l'en-tête pour l'API key
 api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=False)
