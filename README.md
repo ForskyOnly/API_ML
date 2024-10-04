@@ -113,23 +113,38 @@ Nous utilisons GitHub Actions pour automatiser les tests, la construction des im
 
 ## 🌐 Déploiement
 
-1. Construisez l'image Docker :
+### Pipeline CI/CD
+
+Ce projet utilise une pipeline CI/CD configurée avec GitHub Actions. Pour l'utiliser :
+
+1. Configurez les secrets suivants dans les paramètres de votre dépôt GitHub (Settings > Secrets and variables > Actions) :
+   - `API_KEY` : Votre clé API secrète
+   - `DOCKER_HUB_USERNAME` : Votre nom d'utilisateur Docker Hub
+   - `DOCKER_HUB_ACCESS_TOKEN` : Votre token d'accès Docker Hub
+
+2. Poussez vos modifications sur la branche principale pour déclencher automatiquement la pipeline.
+
+### Déploiement sur Azure
+
+Déployez sur Azure Container Instances en utilisant le portail Azure ou Azure CLI comme suit :
+
    ```
-   docker build -t votre-image:tag .
+   az container create \
+   --resource-group <nom_groupe_ressources> \
+   --name <nom_conteneur> \
+   --image <nom_utilisateur_dockerhub>/apiml:<tag_image> \
+   --ports 80 8000 \
+   --dns-name-label <nom_dns_unique> \
+   --environment-variables \
+   API_KEY_NAME=access_token \
+   BEST_RUN_ID=<id_meilleure_execution_mlflow> \
+   MLFLOW_TRACKING_URI=file:///api_ml/models/mlruns \
+   API_KEY=<votre_cle_api_secrete>
    ```
 
-2. Poussez l'image vers Azure Container Registry :
-   ```
-   docker push votre-acr.azurecr.io/votre-image:tag
-   ```
+Remplacez les valeurs entre `<>` par vos propres paramètres.
 
-3. Déployez sur Azure Container Instances en utilisant le portail Azure ou Azure CLI.
-
-4. Configurez les variables d'environnement dans Azure :
-   - API_KEY
-   - API_KEY_NAME
-   - MLFLOW_TRACKING_URI
-   - BEST_RUN_ID
+Assurez-vous d'avoir configuré Azure CLI et d'avoir les permissions nécessaires pour créer des ressources dans votre abonnement Azure.
 
 ## 🤝 Contribution
 
