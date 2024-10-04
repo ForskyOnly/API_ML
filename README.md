@@ -146,10 +146,6 @@ Remplacez les valeurs entre `<>` par vos propres paramètres.
 
 Assurez-vous d'avoir configuré Azure CLI et d'avoir les permissions nécessaires pour créer des ressources dans votre abonnement Azure.
 
-## 🤝 Contribution
-
-Les contributions sont les bienvenues ! Consultez le fichier `CONTRIBUTING.md` pour plus d'informations.
-
 ## 📄 Licence
 
 Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
