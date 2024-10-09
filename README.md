@@ -1,4 +1,4 @@
-Voici une version mise à jour et intégrée du README, incorporant les informations sur le ML Ops et le dashboard :
+
 
 
 # 🚀 API de Classification des Données à Risque
